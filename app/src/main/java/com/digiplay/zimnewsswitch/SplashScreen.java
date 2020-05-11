@@ -2,6 +2,7 @@ package com.digiplay.zimnewsswitch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -17,10 +18,10 @@ public class SplashScreen extends FancyWalkthroughActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FancyWalkthroughCard fancywalkthroughCard1 = new FancyWalkthroughCard("Find Restaurant", "Find the best restaurant in your neighborhood.",R.drawable.find_restaurant1);
-        FancyWalkthroughCard fancywalkthroughCard2 = new FancyWalkthroughCard("Pick the best", "Pick the right place using trusted ratings and reviews.",R.drawable.pickthebest);
-        FancyWalkthroughCard fancywalkthroughCard3 = new FancyWalkthroughCard("Choose your meal", "Easily find the type of food you're craving.",R.drawable.chooseurmeal);
-        FancyWalkthroughCard fancywalkthroughCard4 = new FancyWalkthroughCard("Meal is on the way", "Get ready and comfortable while our biker bring your meal at your door.",R.drawable.mealisonway);
+        FancyWalkthroughCard fancywalkthroughCard1 = new FancyWalkthroughCard("The Chronicle News", "Bulawayo's most popular daily newspaper",R.drawable.logo);
+        FancyWalkthroughCard fancywalkthroughCard2 = new FancyWalkthroughCard("The Herald News", "Zimbabwe's largest daily newspaper.",R.drawable.logo);
+        FancyWalkthroughCard fancywalkthroughCard3 = new FancyWalkthroughCard("The Sunday Mail", "Bringing you the best",R.drawable.logo);
+        FancyWalkthroughCard fancywalkthroughCard4 = new FancyWalkthroughCard("All your News in One Place", "Get the latest Local news.",R.drawable.logo);
 
         fancywalkthroughCard1.setBackgroundColor(R.color.white);
         fancywalkthroughCard1.setIconLayoutParams(300,300,0,0,0,0);
@@ -38,22 +39,25 @@ public class SplashScreen extends FancyWalkthroughActivity {
         pages.add(fancywalkthroughCard4);
 
         for (FancyWalkthroughCard page : pages) {
-            page.setTitleColor(R.color.black);
+            page.setTitleColor(R.color.red);
             page.setDescriptionColor(R.color.black);
         }
+
         setFinishButtonTitle("Get Started");
         showNavigationControls(true);
-        setColorBackground(R.color.colorGreen);
-        //setImageBackground(R.drawable.restaurant);
-        setInactiveIndicatorColor(R.color.grey_600);
-        setActiveIndicatorColor(R.color.colorGreen);
+        setColorBackground(R.color.red);
+        setImageBackground(R.drawable.slider);
+        setInactiveIndicatorColor(R.color.red);
+        setActiveIndicatorColor(R.color.red);
         setOnboardPages(pages);
 
     }
 
     @Override
     public void onFinishButtonPressed() {
-        Toast.makeText(this, "Finish Pressed", Toast.LENGTH_SHORT).show();
+        Intent DriverIntent1 = new Intent(SplashScreen.this, MainActivity.class);
+        startActivity(DriverIntent1);
+
 
     }
 }

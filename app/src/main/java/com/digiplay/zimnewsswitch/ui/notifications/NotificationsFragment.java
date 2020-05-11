@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -16,6 +19,8 @@ import com.digiplay.zimnewsswitch.R;
 
 public class NotificationsFragment extends Fragment {
 
+    private WebView webView;
+
     private NotificationsViewModel notificationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -23,13 +28,20 @@ public class NotificationsFragment extends Fragment {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        webView = (WebView) root.findViewById(R.id.webviewer);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webView.loadUrl("https://www.sundaynews.co.zw");
+        webView.setWebViewClient(new WebViewClient());
+
         return root;
+    }
+
+    private void onBackPressed(){
+
+        if (webView.canGoBack()){
+
+            webView.goBack();
+        }
     }
 }
