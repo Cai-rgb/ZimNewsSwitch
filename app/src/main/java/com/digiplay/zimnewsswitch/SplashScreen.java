@@ -18,24 +18,18 @@ public class SplashScreen extends FancyWalkthroughActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FancyWalkthroughCard fancywalkthroughCard1 = new FancyWalkthroughCard("The Chronicle News", "Bulawayo's most popular daily newspaper",R.drawable.logo);
-        FancyWalkthroughCard fancywalkthroughCard2 = new FancyWalkthroughCard("The Herald News", "Zimbabwe's largest daily newspaper.",R.drawable.logo);
-        FancyWalkthroughCard fancywalkthroughCard3 = new FancyWalkthroughCard("The Sunday Mail", "Bringing you the best",R.drawable.logo);
-        FancyWalkthroughCard fancywalkthroughCard4 = new FancyWalkthroughCard("All your News in One Place", "Get the latest Local news.",R.drawable.logo);
+        FancyWalkthroughCard fancywalkthroughCard1 = new FancyWalkthroughCard("Brandlook", "Lifestyle Magazine",R.mipmap.ic_launcher_round);
+
+        FancyWalkthroughCard fancywalkthroughCard4 = new FancyWalkthroughCard("All your News in One Place", "Get the latest Local news, arts coverage and events happening around you.",R.mipmap.ic_launcher_round);
 
         fancywalkthroughCard1.setBackgroundColor(R.color.white);
         fancywalkthroughCard1.setIconLayoutParams(300,300,0,0,0,0);
-        fancywalkthroughCard2.setBackgroundColor(R.color.white);
-        fancywalkthroughCard2.setIconLayoutParams(300,300,0,0,0,0);
-        fancywalkthroughCard3.setBackgroundColor(R.color.white);
-        fancywalkthroughCard3.setIconLayoutParams(300,300,0,0,0,0);
+
         fancywalkthroughCard4.setBackgroundColor(R.color.white);
         fancywalkthroughCard4.setIconLayoutParams(300,300,0,0,0,0);
         List<FancyWalkthroughCard> pages = new ArrayList<>();
 
         pages.add(fancywalkthroughCard1);
-        pages.add(fancywalkthroughCard2);
-        pages.add(fancywalkthroughCard3);
         pages.add(fancywalkthroughCard4);
 
         for (FancyWalkthroughCard page : pages) {
