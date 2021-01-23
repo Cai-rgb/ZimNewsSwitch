@@ -31,7 +31,7 @@ public class NotificationsFragment extends Fragment {
         webView = (WebView) root.findViewById(R.id.webviewer);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.sundaynews.co.zw");
+        webView.loadUrl("https://www.brandlookmagazine.co.zw");
         webView.setWebViewClient(new WebViewClient());
 
         return root;
